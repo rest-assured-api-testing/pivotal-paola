@@ -6,7 +6,7 @@ public enum ApiMethod {
     DELETE("DELETE"),
     PUT("PUT");
 
-    private String name;
+    private final String name;
 
     ApiMethod(String name) {
         this.name = name;

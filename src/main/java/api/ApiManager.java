@@ -14,14 +14,22 @@ public class ApiManager {
                 .pathParams(apiRequest.getPathParams())
                 .baseUri(apiRequest.getBaseUri())
                 .contentType(ContentType.JSON)
-                .auth().oauth2(apiRequest.getToken())
                 .log().all();
     }
-    public static Response execute(ApiRequest apiRequest){
+    public static ApiResponse execute(ApiRequest apiRequest){
         Response response = buildRequest(apiRequest)
                 .request(apiRequest.getMethod().name()
                         ,apiRequest.getEndpoint());
 
-        return response;
+        return new ApiResponse(response);
+    }
+
+    public static ApiResponse executeWithBody(ApiRequest apiRequest){
+        Response response = buildRequest(apiRequest)
+                .body(apiRequest.getBody())
+                .request(apiRequest.getMethod().name()
+                        ,apiRequest.getEndpoint());
+
+        return new ApiResponse(response);
     }
 }

@@ -64,19 +64,27 @@ public class ApiRequest {
         this.method = method;
     }
 
+    public void setHeaders(final String headerName, final String value) {
+        headers.add(new Header(headerName, value));
+    }
+
     public Headers getHeaders() {
         return new Headers(headers);
     }
 
-    public Map<String, String> getQueryParams() {
-        return queryParams;
+    public void addQueryParam(final String param, final String value) {
+        queryParams.put(param, value);
     }
 
-    public Map<String, String> getPathParams() {
-        return pathParams;
+    public Map<String, String> getQueryParams(){
+        return queryParams;
     }
 
     public void addPathParam(final String param, final String value) {
         pathParams.put(param, value);
+    }
+
+    public Map<String, String> getPathParams(){
+        return pathParams;
     }
 }
