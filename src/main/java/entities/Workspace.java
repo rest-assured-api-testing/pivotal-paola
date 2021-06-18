@@ -1,17 +1,24 @@
 package entities;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Workspace {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String kind;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long id;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String name;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long person_id;
-    private List<Long> projects_id;
+    @JsonInclude(JsonInclude.Include.NON_DEFAULT)
+    private List<Long> project_ids;
 
     public Workspace() {
-        projects_id = new ArrayList<>();
+        project_ids = new ArrayList<>();
     }
 
     public String getKind() {
@@ -46,11 +53,11 @@ public class Workspace {
         this.person_id = person_id;
     }
 
-    public List<Long> getProjects_id() {
-        return projects_id;
+    public List<Long> getProject_ids() {
+        return project_ids;
     }
 
-    public void setProjects_id(List<Long> projects_id) {
-        this.projects_id = projects_id;
+    public void setProject_ids(List<Long> project_ids) {
+        this.project_ids = project_ids;
     }
 }

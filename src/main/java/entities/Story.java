@@ -1,24 +1,41 @@
 package entities;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Story {
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String kind;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long id;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Date created_at;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Date updated_at;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private int estimate;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String story_type;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String name;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String description;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String current_state;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long request_by_id;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String url;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long project_id;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private String[] labels;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Long owned_by_id;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<Long> owner_ids;
 
     public Story() {

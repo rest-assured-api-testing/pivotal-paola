@@ -55,20 +55,6 @@
     }
   },
   "required": [
-    "kind",
-    "id",
-    "created_at",
-    "updated_at",
-    "estimate",
-    "story_type",
-    "name",
-    "description",
-    "current_state",
-    "requested_by_id",
-    "url",
-    "project_id",
-    "owner_ids",
-    "labels",
-    "owned_by_id"
+    "name"
   ]
 }
