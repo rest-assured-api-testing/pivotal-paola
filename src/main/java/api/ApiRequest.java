@@ -24,6 +24,10 @@ public class ApiRequest {
         pathParams = new HashMap<>();
     }
 
+    public void clearPath() {
+        pathParams.clear();
+    }
+
     public String getBaseUri() {
         return baseUri;
     }
