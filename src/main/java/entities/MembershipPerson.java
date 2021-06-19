@@ -2,10 +2,7 @@ package entities;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Workspace {
+public class MembershipPerson {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String kind;
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -13,13 +10,11 @@ public class Workspace {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     private String name;
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private Long person_id;
-    @JsonInclude(JsonInclude.Include.NON_DEFAULT)
-    private List<Long> project_ids;
-
-    public Workspace() {
-        project_ids = new ArrayList<>();
-    }
+    private String email;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String initials;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private String username;
 
     public String getKind() {
         return kind;
@@ -45,20 +40,27 @@ public class Workspace {
         this.name = name;
     }
 
-    public Long getPerson_id() {
-        return person_id;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPerson_id(Long person_id) {
-        this.person_id = person_id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public List<Long> getProject_ids() {
-        return project_ids;
+    public String getInitials() {
+        return initials;
     }
 
-    public void setProject_ids(List<Long> project_ids) {
-        this.project_ids = project_ids;
+    public void setInitials(String initials) {
+        this.initials = initials;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 }
