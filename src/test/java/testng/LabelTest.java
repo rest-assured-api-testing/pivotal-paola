@@ -155,7 +155,7 @@ public class LabelTest extends CreateBaseProjectCreatedTest {
     @Test(groups = {"createLabels", "cleanLabels", "cleanProject"})
     public void shouldNotUpdateACreatedLabelWithNullProjectId() throws JsonProcessingException {
         Labels newLabel = new Labels();
-        newLabel.setProject_id(null);
+        newLabel.setProject_id(345345L);
         apiRequest.setEndpoint(config.setConfig().getProperty("ID_LABEL_URL"));
         apiRequest.setMethod(ApiMethod.PUT);
         apiRequest.addPathParam("projectId", response.getBody(Project.class).getId().toString());

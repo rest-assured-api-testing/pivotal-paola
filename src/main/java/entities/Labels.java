@@ -30,7 +30,7 @@ public class Labels {
         return project_id;
     }
 
-    public void setProject_id(Long project_id) {
+    public void setProject_id(long project_id) {
         this.project_id = project_id;
     }
 
